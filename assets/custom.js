@@ -16,6 +16,5 @@ function color_picker() {
 
 	color.addEventListener("change", function() {
 		product_bg.style.backgroundColor = value;
-	}
-
+	});
 }
