@@ -1,5 +1,8 @@
 {
   "current": {
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
     "social_facebook_link": "",
     "social_twitter_link": "",
     "social_pinterest_link": "",
@@ -227,7 +230,7 @@
       "featured-product": {
         "type": "featured-product",
         "settings": {
-          "featured_product": "",
+          "featured_product": "kemaze",
           "show_quantity_selector": false,
           "show_variant_labels": true,
           "show_vendor": false,
@@ -236,7 +239,7 @@
           "enable_video_looping": false,
           "layout": "square",
           "media_size": "fill",
-          "background_color": "rgba(0,0,0,0)"
+          "background_color": "{{ shop.brand.colors.secondary[0].foreground }}"
         }
       },
       "hero": {
