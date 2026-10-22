@@ -35,14 +35,14 @@
             {% assign featured = true %}
           {%- endif -%}
 
-          {% include 'product-preview-image' with media: variant_media, featured_media: featured, gallery_type: 'media', data_image: 'data-variant-media-image' %}
+          {% include 'product-preview-image' with media, media: variant_media, featured_media: featured, gallery_type: 'media', data_image: 'data-variant-media-image' %}
         {%- endif -%}
 
       {% endfor %}
     {%- endunless -%}
 
     {% unless featured_media and variant_media_ids contains featured_media.id %}
-      {% include 'product-preview-image' with media: featured_media, featured_media: true, gallery_type: 'media', data_image: 'data-variant-media-image' %}
+      {% include 'product-preview-image' with media, media: featured_media, featured_media: true, gallery_type: 'media', data_image: 'data-variant-media-image' %}
     {%- endunless -%}
 
     {% include 'shopify-xr-button' %}
@@ -579,3 +579,20 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'product-preview-image' with media: variant_media, featured_media:
+    featured, gallery_type: 'media', data_image: 'data-variant-media-image' %}"
+  to: "{% include 'product-preview-image' with media, media: variant_media, featured_media:
+    featured, gallery_type: 'media', data_image: 'data-variant-media-image' %}"
+  position: 1648..1807
+- from: "{% include 'product-preview-image' with media: featured_media, featured_media:
+    true, gallery_type: 'media', data_image: 'data-variant-media-image' %}"
+  to: "{% include 'product-preview-image' with media, media: featured_media, featured_media:
+    true, gallery_type: 'media', data_image: 'data-variant-media-image' %}"
+  position: 1960..2116
+{% endcomment %}
